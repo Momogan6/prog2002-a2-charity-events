@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details | Bright Futures</title>
+    <meta name="description" content="Full details of a charity event, including ticket information and fundraising progress.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ============================= HEADER / NAV ============================= -->
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html">
+                <span class="logo">♥</span>
+                <span>Bright Futures Events</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search Events</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ============================= CONTENT (filled by JS) ============================= -->
+    <div id="status" role="status" aria-live="polite" class="container" style="padding-top:24px;"></div>
+
+    <main id="eventContent" class="container" style="display:none;">
+        <!-- Hero banner -->
+        <section class="detail-hero" style="margin:0 -20px 0;">
+            <div class="container">
+                <a href="search.html" class="btn btn-ghost" style="color:#cfe8e5;padding-left:0;">‹ Back to search</a>
+                <div style="margin-top:10px;">
+                    <span class="chip" id="eventCategory">Category</span>
+                    <span id="eventStatus"></span>
+                </div>
+                <h1 id="eventTitle">Event title</h1>
+                <div class="meta">
+                    <span>📍 <span id="eventLocation">Location</span></span>
+                    <span>🗓️ <span id="eventDate">Date</span></span>
+                    <span>🏢 <span id="eventOrg">Organisation</span></span>
+                </div>
+
+                <div class="hero-image">
+                    <img id="eventImage" alt="" onerror="this.classList.add('img-missing'); this.removeAttribute('src');">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="detail-layout">
+                <!-- LEFT: full description -->
+                <div class="panel">
+                    <h2>About this event</h2>
+                    <p id="eventSummary" style="font-weight:600;color:var(--ink-900);"></p>
+                    <p id="eventDescription"></p>
+
+                    <h3>Our purpose</h3>
+                    <p id="eventPurpose"></p>
+
+                    <h3>Event details</h3>
+                    <ul class="facts">
+                        <li><span class="ico">📅</span><span><span class="k">Starts</span><br><span class="v" id="factStart">—</span></span></li>
+                        <li><span class="ico">⏰</span><span><span class="k">Ends</span><br><span class="v" id="factEnd">—</span></span></li>
+                        <li><span class="ico">📍</span><span><span class="k">Venue</span><br><span class="v" id="factVenue">—</span></span></li>
+                        <li><span class="ico">🗺️</span><span><span class="k">Address</span><br><span class="v" id="factAddress">—</span></span></li>
+                    </ul>
+
+                    <h3>Organised by</h3>
+                    <p id="eventOrgDetail"></p>
+                </div>
+
+                <!-- RIGHT: ticket + progress -->
+                <aside class="sticky-side">
+                    <!-- Ticket information + register -->
+                    <div class="panel">
+                        <h2>Ticket information</h2>
+                        <div class="ticket-price" id="eventPrice">$0.00</div>
+                        <p class="ticket-note" id="ticketNote">Your ticket is a donation to this cause.</p>
+                        <button class="btn btn-accent" id="registerBtn" style="width:100%;">Register / Buy ticket</button>
+                    </div>
+
+                    <!-- Goal vs Progress -->
+                    <div class="panel">
+                        <h2>Goal vs Progress</h2>
+                        <div class="progress-wrap">
+                            <div class="progress"><span id="progressBar" style="width:0%"></span></div>
+                            <div class="progress-legend">
+                                <span><b id="raisedText">$0</b> raised</span>
+                                <span id="goalText">Goal: $0</span>
+                            </div>
+                        </div>
+                        <p id="progressNote" style="margin:14px 0 0;font-size:.9rem;"></p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================= MODAL ============================= -->
+    <div class="modal-backdrop" id="registerModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal">
+            <div class="icon">🚧</div>
+            <h3 id="modalTitle">Coming soon</h3>
+            <p>This feature is currently under construction.</p>
+            <button class="btn btn-primary" id="modalClose">Close</button>
+        </div>
+    </div>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Bright Futures Foundation</h4>
+                    <p>A not-for-profit organisation supporting education and wellbeing programs for children in regional communities.</p>
+                </div>
+                <div>
+                    <h4>Explore</h4>
+                    <a href="index.html">Home</a>
+                    <a href="search.html">Search events</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@brightfutures.org.au">hello@brightfutures.org.au</a>
+                    <a href="tel:+61266001000">+61 2 6600 1000</a>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 Bright Futures Foundation. Built for PROG2002 Assessment 2.</div>
+        </div>
+    </footer>
+
+    <!-- ============================= SCRIPTS ============================= -->
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/event.js"></script>
+</body>
+</html>
