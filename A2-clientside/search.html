@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Charity Events | Bright Futures</title>
+    <meta name="description" content="Search active charity events by date, location and category.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ============================= HEADER / NAV ============================= -->
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html">
+                <span class="logo">♥</span>
+                <span>Bright Futures Events</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search Events</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ============================= PAGE INTRO ============================= -->
+    <section class="hero" style="padding:46px 0 40px;">
+        <div class="container hero-inner">
+            <span class="eyebrow">Search</span>
+            <h1 style="font-size:2rem;">Find the perfect event for you</h1>
+            <p style="margin:0;">Filter by date, location and category — you can use one, two or all three criteria.</p>
+        </div>
+    </section>
+
+    <!-- ============================= FILTER FORM ============================= -->
+    <section class="section" style="padding-top:38px;">
+        <div class="container">
+
+            <div id="status" role="status" aria-live="polite"></div>
+
+            <form class="filters" id="searchForm" novalidate>
+                <div class="filters-grid">
+                    <!-- Criteria 1: DATE - a date picker is the most natural control -->
+                    <div class="field">
+                        <label for="filterDate">Date</label>
+                        <input type="date" id="filterDate" name="date">
+                        <span class="field-error" id="errorDate"></span>
+                    </div>
+
+                    <!-- Criteria 2: LOCATION - free text with suggestions;
+                         matches the city OR the venue name -->
+                    <div class="field">
+                        <label for="filterLocation">Location</label>
+                        <input type="text" id="filterLocation" name="location"
+                               list="cityOptions" placeholder="e.g. Lismore or Coffs Harbour"
+                               autocomplete="off">
+                        <datalist id="cityOptions">
+                            <option value="Lismore"></option>
+                            <option value="Coffs Harbour"></option>
+                            <option value="Ballina"></option>
+                            <option value="Byron Bay"></option>
+                        </datalist>
+                        <span class="field-error" id="errorLocation"></span>
+                    </div>
+
+                    <!-- Criteria 3: CATEGORY - a dropdown, filled from the API -->
+                    <div class="field">
+                        <label for="filterCategory">Category</label>
+                        <select id="filterCategory" name="category">
+                            <option value="">All categories</option>
+                            <!-- options are added by search.js from GET /api/categories -->
+                        </select>
+                        <span class="field-error" id="errorCategory"></span>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <button type="submit" class="btn btn-primary" id="searchBtn">Search events</button>
+                    <button type="button" class="btn btn-ghost" id="clearBtn">Clear filters</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============================= RESULTS ============================= -->
+    <section class="section" style="padding-top:8px;">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <h2 id="resultHeading">Results</h2>
+                    <p class="muted" id="resultCount">Use the filters above to search for events.</p>
+                </div>
+            </div>
+
+            <!-- Matching events are rendered here -->
+            <div class="event-grid" id="results"></div>
+        </div>
+    </section>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Bright Futures Foundation</h4>
+                    <p>A not-for-profit organisation supporting education and wellbeing programs for children in regional communities.</p>
+                </div>
+                <div>
+                    <h4>Explore</h4>
+                    <a href="index.html">Home</a>
+                    <a href="search.html">Search events</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@brightfutures.org.au">hello@brightfutures.org.au</a>
+                    <a href="tel:+61266001000">+61 2 6600 1000</a>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 Bright Futures Foundation. Built for PROG2002 Assessment 2.</div>
+        </div>
+    </footer>
+
+    <!-- ============================= SCRIPTS ============================= -->
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
