@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Futures Charity Events | Home</title>
+    <meta name="description" content="Discover and register for charity events in your city. Fundraising galas, fun runs, auctions and concerts for great causes.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ============================= HEADER / NAV ============================= -->
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html">
+                <span class="logo">♥</span>
+                <span>Bright Futures Events</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="search.html">Search Events</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ============================= HERO ============================= -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <span class="eyebrow">Charity Events in Your City</span>
+            <h1>Together we can change lives, one event at a time.</h1>
+            <p>
+                Bright Futures Foundation brings our community together through fun runs,
+                gala dinners, auctions and concerts. Every ticket you buy is a donation that
+                supports education and wellbeing programs for children in regional communities.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-accent" href="search.html">Find an event</a>
+                <a class="btn btn-outline" href="#events" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.5)">Browse upcoming</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat"><b id="statEvents">—</b><span>Active events</span></div>
+                <div class="stat"><b id="statCategories">—</b><span>Event categories</span></div>
+                <div class="stat"><b id="statRaised">—</b><span>Raised so far</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= MISSION / ABOUT (static) ============================= -->
+    <section class="mission" id="about">
+        <div class="container section" style="padding:44px 0;">
+            <div class="mission-grid">
+                <div>
+                    <h2>Our mission</h2>
+                    <p>
+                        We believe every child deserves the opportunity to learn, grow and thrive.
+                        Bright Futures Foundation is a not-for-profit organisation that raises funds
+                        and awareness for education and wellbeing programs in regional communities.
+                    </p>
+                    <p>
+                        Our events are hosted by volunteers and supported by local businesses.
+                        Whether you run, walk, dine or bid, you are part of something bigger than
+                        the event itself — you are helping a young person build a brighter future.
+                    </p>
+                    <p style="margin-top:18px;">
+                        <a class="btn btn-primary" href="search.html">Explore all events</a>
+                    </p>
+                </div>
+                <div class="mission-card">
+                    <h3>What your support achieves</h3>
+                    <ul>
+                        <li>Scholarships for students in regional schools</li>
+                        <li>Free after-school tutoring and mentoring</li>
+                        <li>Wellbeing and mental health programs</li>
+                        <li>Sports and arts equipment for local schools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= UPCOMING EVENTS (dynamic) ============================= -->
+    <section class="section" id="events">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <h2>Upcoming charity events</h2>
+                    <p>Browse our active and upcoming events and register your place.</p>
+                </div>
+                <a class="btn btn-outline" href="search.html">Search &amp; filter</a>
+            </div>
+
+            <!-- Messages / loading state are injected here by index.js -->
+            <div id="status" role="status" aria-live="polite"></div>
+
+            <!-- Event cards are rendered here by JavaScript from the API -->
+            <div class="event-grid" id="eventGrid"></div>
+        </div>
+    </section>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Bright Futures Foundation</h4>
+                    <p>A not-for-profit organisation supporting education and wellbeing programs for children in regional communities.</p>
+                    <p>ABN 00 000 000 000</p>
+                </div>
+                <div>
+                    <h4>Explore</h4>
+                    <a href="index.html">Home</a>
+                    <a href="search.html">Search events</a>
+                    <a href="#about">About us</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@brightfutures.org.au">hello@brightfutures.org.au</a>
+                    <a href="tel:+61266001000">+61 2 6600 1000</a>
+                    <p>1 Park Avenue, Lismore NSW 2480</p>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 Bright Futures Foundation. Built for PROG2002 Assessment 2.</div>
+        </div>
+    </footer>
+
+    <!-- ============================= SCRIPTS ============================= -->
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
