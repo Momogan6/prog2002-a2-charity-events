@@ -1,0 +1,19 @@
+# ---- dependencies ----
+node_modules/
+
+# ---- environment / secrets ----
+.env
+.env.local
+
+# ---- packaged submission archives ----
+*.zip
+
+# ---- logs ----
+*.log
+npm-debug.log*
+
+# ---- editor / OS noise ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
