@@ -3,6 +3,11 @@
 Static HTML/CSS/JavaScript website that consumes the Charity Events API.
 No build step is required.
 
+**Framework constraints.** Built with plain HTML, CSS and JavaScript only. No CSS or
+JavaScript framework or library is used (no Bootstrap, Tailwind, jQuery, React, Vue or
+AngularJS), nothing is loaded from a CDN, and no template engine is involved — the three
+pages are hand-written `.html` files served as they are.
+
 ## Folder contents
 
 ```

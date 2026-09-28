@@ -3,6 +3,11 @@
 Node.js + Express + MySQL RESTful API that serves charity event data to the
 client-side website.
 
+**Framework constraints.** Express is used only to build the REST API. No template engine
+(EJS, Pug, Handlebars, etc.) is configured and `res.render()` is never called — the server
+only ever sends JSON, and the pages themselves are plain HTML/CSS/JS in `../A2-clientside`.
+The only dependencies are `express`, `cors`, `dotenv` and `mysql2`.
+
 ## Folder contents
 
 ```
